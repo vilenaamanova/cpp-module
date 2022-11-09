@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-void	open_and_replace(std::string const & filename, std::string s1, std::string s2)
+void	openAndReplace(std::string const &filename, std::string s1, std::string s2)
 {
 	int				i;
 	int				pos;
@@ -34,7 +34,7 @@ void	open_and_replace(std::string const & filename, std::string s1, std::string 
 int	main(int argc, char **argv)
 {
 	if (argc == 4)
-		open_and_replace(argv[1], argv[2], argv[3]);
+		openAndReplace(argv[1], argv[2], argv[3]);
 	else
 		std::cout << "Program usage: <filename> word_to_replace replacement_word" << std::endl;
 	return (0);

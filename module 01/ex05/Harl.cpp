@@ -37,14 +37,16 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	void	(Harl::*complainPTR[4])(void);
-	int			i;
-	std::string	grievances[4] = {"debug", "info", "warning", "error"};
 
-	i = 0;
 	complainPTR[0] = &Harl::debug;
 	complainPTR[1] = &Harl::info;
 	complainPTR[2] = &Harl::warning;
 	complainPTR[3] = &Harl::error;
+
+	int			i;
+	std::string	grievances[4] = {"debug", "info", "warning", "error"};
+
+	i = 0;
 	while (i < 4)
 	{
 		if (level == grievances[i])
@@ -54,5 +56,4 @@ void	Harl::complain(std::string level)
 		}
 		i++;
 	}
-
 }

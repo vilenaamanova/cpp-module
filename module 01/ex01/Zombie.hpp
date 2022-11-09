@@ -13,7 +13,7 @@ public:
 		~Zombie(void);
 
 		void	announce();
-		void	set_name(std::string name);
+		void	setName(std::string name);
 
 };
 

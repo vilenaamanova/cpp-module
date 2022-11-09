@@ -3,7 +3,7 @@
 int	main()
 {
 	std::string	command;
-	PhoneBook	ph_book;
+	PhoneBook	phBook;
 
 	std::cout << "The phone book is empty! Fill it up!" << std::endl;
 	while (command != "EXIT")
@@ -12,11 +12,11 @@ int	main()
 		std::getline(std::cin, command);
 		if (command == "ADD")
 		{
-			ph_book.add_contact();
+			phBook.addContact();
 		}
 		else if (command == "SEARCH")
 		{
-			ph_book.search_contact();
+			phBook.searchContact();
 		}
 	}
 	return (0);

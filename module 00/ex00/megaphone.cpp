@@ -4,17 +4,16 @@ int main(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	(void)argc;
 
 	i = 1;
-	if (argv[i])
+	if (argc >= 2)
 	{
 		while(argv[i])
 		{
 			j = 0;
 			while (argv[i][j])
 			{
-				std::cout << (char) std::toupper(argv[i][j]);
+				std::cout << (char)std::toupper(argv[i][j]);
 				j++;
 			}
 			i++;

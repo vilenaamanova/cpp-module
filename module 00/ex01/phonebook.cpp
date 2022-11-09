@@ -9,7 +9,7 @@ PhoneBook::~PhoneBook(void)
 {
 }
 
-void	PhoneBook::add_contact(void)
+void	PhoneBook::addContact(void)
 {
 	std::string	data;
 
@@ -19,7 +19,7 @@ void	PhoneBook::add_contact(void)
 	std::cout << "Enter first name of a contact: ";
 	std::getline(std::cin, data);
 	if (!data.empty())
-		this->Contacts[this->index % 8].set_first_name(data);
+		this->Contacts[this->index % 8].setFirstName(data);
 	else
 	{
 		std::cout << "You can't leave the field empty!\nTry again!" << std::endl;
@@ -29,7 +29,7 @@ void	PhoneBook::add_contact(void)
 	std::cout << "Enter last name of a contact: ";
 	std::getline(std::cin, data);
 	if (!data.empty())
-		this->Contacts[this->index % 8].set_last_name(data);
+		this->Contacts[this->index % 8].setLastName(data);
 	else
 	{
 		std::cout << "You can't leave the field empty!\nTry again!" << std::endl;
@@ -39,7 +39,7 @@ void	PhoneBook::add_contact(void)
 	std::cout << "Enter nickname of a contact: ";
 	std::getline(std::cin, data);
 	if (!data.empty())
-		this->Contacts[this->index % 8].set_nickname(data);
+		this->Contacts[this->index % 8].setNickname(data);
 	else
 	{
 		std::cout << "You can't leave the field empty!\nTry again!" << std::endl;
@@ -49,7 +49,7 @@ void	PhoneBook::add_contact(void)
 	std::cout << "Enter phone number of a contact: ";
 	std::getline(std::cin, data);
 	if (!data.empty())
-		this->Contacts[this->index % 8].set_phone_num(data);
+		this->Contacts[this->index % 8].setPhoneNum(data);
 	else
 	{
 		std::cout << "You can't leave the field empty!\nTry again!" << std::endl;
@@ -59,7 +59,7 @@ void	PhoneBook::add_contact(void)
 	std::cout << "Enter the darkest secret of a contact: ";
 	std::getline(std::cin, data);
 	if (!data.empty())
-		this->Contacts[this->index % 8].set_dark_secret(data);
+		this->Contacts[this->index % 8].setDarkSecret(data);
 	else
 	{
 		std::cout << "You can't leave the field empty!\nTry again!" << std::endl;
@@ -70,27 +70,27 @@ void	PhoneBook::add_contact(void)
 	return ;
 }
 
-void	PhoneBook::search_contact(void)
+void	PhoneBook::searchContact(void)
 {
 	int					num;
 	std::string			index;
-	std::stringstream	to_int;
+	std::stringstream	toInt;
 
-	if (this->Contacts[0].get_first_name().size() != 0)
-		display_table();
+	if (this->Contacts[0].getFirstName().size() != 0)
+		displayTable();
 	else
 		std::cout << "The phone book is empty!" << std::endl;
 	std::cout << "Search for a contact (enter index): ";
 	std::getline(std::cin, index);
-	to_int << index;
-	to_int >> num;
-	if (index.size() == 1 && index[0] >= '0' && index[0] <= '7' && this->Contacts[num].get_first_name().size() != 0)
+	toInt << index;
+	toInt >> num;
+	if (index.size() == 1 && index[0] >= '0' && index[0] <= '7' && this->Contacts[num].getFirstName().size() != 0)
 	{
-		std::cout << "First name: " << this->Contacts[num].get_first_name() << std::endl;
-		std::cout << "Last name: " << this->Contacts[num].get_last_name() << std::endl;
-		std::cout << "Nickname: " << this->Contacts[num].get_nickname() << std::endl;
-		std::cout << "Phone number: " << this->Contacts[num].get_phone_num() << std::endl;
-		std::cout << "Darkest secret: " << this->Contacts[num].get_dark_secret() << std::endl;
+		std::cout << "First name: " << this->Contacts[num].getFirstName() << std::endl;
+		std::cout << "Last name: " << this->Contacts[num].getLastName() << std::endl;
+		std::cout << "Nickname: " << this->Contacts[num].getNickname() << std::endl;
+		std::cout << "Phone number: " << this->Contacts[num].getPhoneNum() << std::endl;
+		std::cout << "Darkest secret: " << this->Contacts[num].getDarkSecret() << std::endl;
 	}
 	else
 		std::cout << "The index is out of range or contact doesn't exist!" << std::endl;
